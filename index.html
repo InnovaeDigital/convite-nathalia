@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101e2b">
+  <meta name="description" content="Convite para os 15 anos de Nathalia — 20 de fevereiro, às 19:00, na Chácara Clube.">
+  <title>15 anos de Nathalia — Convite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --navy: #101e2b;
+      --navy-deep: #09131e;
+      --petrol: #203b4b;
+      --silver: #c7cbd0;
+      --silver-light: #edf0f2;
+      --white: #f7f6f4;
+    }
+    * { box-sizing: border-box; }
+    html { min-height: 100%; background: var(--navy-deep); }
+    body {
+      margin: 0; min-height: 100vh; color: var(--white);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      background:
+        radial-gradient(ellipse at 50% 4%, rgba(58,91,108,.52), transparent 42rem),
+        radial-gradient(ellipse at 50% 100%, rgba(26,49,65,.48), transparent 42rem),
+        linear-gradient(155deg, #172b3a 0%, #0d1b28 52%, #08131e 100%);
+    }
+    .page {
+      min-height: 100vh; display: grid; place-items: center;
+      padding: 34px 16px;
+    }
+    .invitation {
+      position: relative; isolation: isolate; overflow: hidden;
+      width: min(100%, 560px); padding: clamp(36px, 7vw, 66px) clamp(22px, 7vw, 58px);
+      text-align: center;
+      border: 1px solid rgba(211,218,224,.62);
+      background: linear-gradient(165deg, rgba(36,61,76,.94), rgba(15,29,42,.97) 48%, rgba(10,21,32,.98));
+      box-shadow: 0 28px 85px rgba(0,0,0,.48), inset 0 0 70px rgba(144,169,184,.07);
+      animation: arrive .9s ease both;
+    }
+    .invitation::before {
+      content: ""; position: absolute; inset: 10px; border: 1px solid rgba(207,214,220,.25);
+      pointer-events: none; z-index: -1;
+    }
+    .invitation::after {
+      content: ""; position: absolute; width: 240px; height: 240px; right: -170px; bottom: -165px;
+      border: 1px solid rgba(207,214,220,.18); border-radius: 50%;
+      box-shadow: 0 0 0 12px rgba(207,214,220,.025), 0 0 0 24px rgba(207,214,220,.02);
+      pointer-events: none;
+    }
+    .crown { width: 54px; height: 38px; color: var(--silver-light); margin: 0 auto 24px; }
+    .intro {
+      max-width: 360px; margin: 0 auto; color: rgba(247,246,244,.9);
+      font-size: 13px; line-height: 1.8; letter-spacing: .22em; font-weight: 500;
+    }
+    .names { margin: 27px 0 20px; display: flex; flex-direction: column; align-items: center; }
+    .age {
+      color: var(--silver-light); font-family: "Great Vibes", cursive;
+      font-size: clamp(54px, 12vw, 72px); line-height: 1.1;
+      text-shadow: 0 2px 15px rgba(220,228,235,.12);
+    }
+    .name {
+      margin-top: -3px; font-family: "Great Vibes", cursive;
+      font-size: clamp(78px, 17vw, 108px); line-height: 1.02;
+      background: linear-gradient(180deg, #fff 0%, #c9cdd1 48%, #9ca7b0 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      filter: drop-shadow(0 3px 5px rgba(0,0,0,.25));
+    }
+    .divider { display: flex; align-items: center; justify-content: center; gap: 13px; margin: 22px auto 29px; }
+    .divider span:first-child, .divider span:last-child {
+      width: 76px; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(207,215,222,.78));
+    }
+    .divider span:last-child { transform: scaleX(-1); }
+    .diamond { width: 7px; height: 7px; border: 1px solid var(--silver); transform: rotate(45deg); }
+    .details { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 0 auto 25px; }
+    .detail-label {
+      display: block; margin-bottom: 7px; color: var(--silver);
+      font-size: 11px; letter-spacing: .34em;
+    }
+    .detail-value { font-size: clamp(22px, 5vw, 27px); line-height: 1.15; }
+    .location { margin: 0 auto 25px; }
+    .mass {
+      margin: 0; color: var(--silver-light); font-size: 13px;
+      letter-spacing: .28em; line-height: 1.6;
+    }
+    .notes {
+      max-width: 370px; margin: 0 auto; display: grid; gap: 8px;
+      color: rgba(247,246,244,.92); font-size: 18px; line-height: 1.35;
+    }
+    .notes-label { color: var(--silver); font-size: 11px; letter-spacing: .36em; }
+    .notes p { margin: 0; }
+    .notes .dress { font-style: italic; }
+    .bow { width: 52px; height: 29px; margin: 22px auto 8px; color: var(--silver); }
+    .closing { margin: 0; font-family: "Great Vibes", cursive; font-size: clamp(32px, 7vw, 42px); color: var(--silver-light); }
+    .location-button {
+      display: inline-block; margin-top: 28px; padding: 13px 25px 12px;
+      border: 1px solid rgba(239,242,244,.88); border-radius: 999px;
+      background: linear-gradient(180deg, #edf0f2, #bfc6cc);
+      color: #142433; text-decoration: none; font-size: 12px; font-weight: 600;
+      letter-spacing: .2em; box-shadow: 0 9px 26px rgba(0,0,0,.28);
+      transition: transform .22s ease, filter .22s ease, box-shadow .22s ease;
+    }
+    .location-button:hover { transform: translateY(-2px); filter: brightness(1.06); box-shadow: 0 14px 30px rgba(0,0,0,.36); }
+    .location-button:active { transform: scale(.97); }
+    .location-button:focus-visible { outline: 2px solid white; outline-offset: 5px; }
+    @keyframes arrive { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 420px) {
+      .page { padding: 16px 10px; }
+      .invitation { padding: 36px 22px; }
+      .details { gap: 10px; }
+      .detail-value { font-size: 21px; }
+      .intro { font-size: 11px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <article class="invitation" aria-label="Convite dos 15 anos de Nathalia">
+      <svg class="crown" viewBox="0 0 64 40" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.25">
+        <path d="M8 32 4 10 18 22 32 4 46 22 60 10 56 32Z" stroke-linejoin="round"/>
+        <path d="M8 36H56"/>
+        <circle cx="32" cy="4" r="1.8" fill="currentColor"/><circle cx="4" cy="10" r="1.5" fill="currentColor"/><circle cx="60" cy="10" r="1.5" fill="currentColor"/>
+      </svg>
+
+      <p class="intro">UMA NOITE ESPECIAL MERECE SER COMPARTILHADA. POR ISSO, CONVIDO VOCÊ PARA OS MEUS</p>
+
+      <div class="names">
+        <div class="age">15 anos</div>
+        <div class="name">Nathalia</div>
+      </div>
+
+      <div class="divider" aria-hidden="true"><span></span><i class="diamond"></i><span></span></div>
+
+      <section class="details" aria-label="Data e horário">
+        <div><span class="detail-label">DATA</span><span class="detail-value">20 de fevereiro</span></div>
+        <div><span class="detail-label">HORÁRIO</span><span class="detail-value">19:00</span></div>
+      </section>
+
+      <section class="location">
+        <span class="detail-label">LOCAL</span>
+        <span class="detail-value">Chácara Clube</span>
+      </section>
+
+      <p class="mass">MISSA ÀS 18 HORAS</p>
+
+      <div class="divider" aria-hidden="true"><span></span><i class="diamond"></i><span></span></div>
+
+      <section class="notes">
+        <span class="notes-label">OBS:</span>
+        <p>Traga sua bebida!</p>
+        <p class="dress">Peço, por gentileza, que evitem trajes na cor azul marinho.</p>
+      </section>
+
+      <svg class="bow" viewBox="0 0 64 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.15">
+        <path d="M32 16C22 4 8 4 8 16s14 12 24 0Z"/><path d="M32 16c10-12 24-12 24 0S42 28 32 16Z"/>
+        <circle cx="32" cy="16" r="2.6" fill="currentColor"/><path d="m30 18-6 12m10-12 6 12"/>
+      </svg>
+
+      <p class="closing">Conto com a sua presença!</p>
+
+      <a class="location-button" href="https://maps.app.goo.gl/ZgitVUHTH3QmhkNn8?g_st=ic" target="_blank" rel="noopener noreferrer">ABRIR LOCALIZAÇÃO</a>
+    </article>
+  </main>
+</body>
+</html>
