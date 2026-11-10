@@ -15,7 +15,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="stage">
+
+  <div class="welcome-screen" aria-label="Boas-vindas">
+    <div class="welcome-glow"></div>
+    <div class="welcome-stars" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+    <div class="welcome-content">
+      <svg class="welcome-crown" viewBox="0 0 120 72" aria-hidden="true">
+        <path d="M18 52 10 22l24 19 26-31 26 31 24-19-8 30zM18 59h84M24 52h72" />
+        <circle cx="10" cy="22" r="2"/><circle cx="110" cy="22" r="2"/><circle cx="60" cy="10" r="2"/>
+      </svg>
+      <div class="welcome-kicker">UM CONVITE ESPECIAL</div>
+      <div class="welcome-title">Seja bem-vindo(a)</div>
+      <div class="welcome-line"><span></span><i></i><span></span></div>
+      <div class="welcome-subtitle">Uma noite inesquecível espera por você</div>
+    </div>
+  </div>
+
+  <main class="stage invitation-stage">
     <div class="ambient ambient-a" aria-hidden="true"></div>
     <div class="ambient ambient-b" aria-hidden="true"></div>
     <div class="particles" id="particles" aria-hidden="true"></div>
@@ -172,7 +190,7 @@
     (() => {
       const layer = document.getElementById("particles");
       const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const amount = reduced ? 8 : 30;
+      const amount = reduced ? 8 : 34;
       for (let i = 0; i < amount; i++) {
         const p = document.createElement("span");
         p.className = "particle";
@@ -181,6 +199,22 @@
         p.style.animationDelay = `${(i * .47) % 5}s`;
         p.style.animationDuration = `${3.5 + (i % 4)}s`;
         layer.appendChild(p);
+      }
+
+      // Abertura de 2 segundos. Em preferência por movimento reduzido,
+      // a tela de boas-vindas é dispensada imediatamente.
+      const welcome = document.querySelector(".welcome-screen");
+      if (welcome) {
+        if (reduced) {
+          welcome.remove();
+          document.body.classList.add("site-ready");
+        } else {
+          window.setTimeout(() => {
+            welcome.classList.add("welcome-leave");
+            document.body.classList.add("site-ready");
+            window.setTimeout(() => welcome.remove(), 420);
+          }, 1580);
+        }
       }
     })();
   </script>
