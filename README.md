@@ -1,21 +1,22 @@
 # Convite digital — 15 anos de Nathalia
 
-Página estática responsiva, pronta para GitHub Pages.
+Site estático, responsivo e pronto para hospedar gratuitamente no GitHub Pages.
 
-## Publicar pelo GitHub
+## Publicar e obter um link para celular (Android e iPhone)
 
-1. Crie um repositório no GitHub.
-2. Envie os arquivos deste pacote para a raiz do repositório.
-3. Abra **Settings → Pages**.
-4. Em **Build and deployment**, escolha **Deploy from a branch**.
-5. Selecione a branch `main` e a pasta `/ (root)`, depois salve.
+1. Entre no GitHub e crie um repositório novo (por exemplo: `convite-nathalia`).
+2. Extraia este ZIP.
+3. Envie o arquivo `index.html` para a raiz do repositório.
+4. Abra **Settings → Pages**.
+5. Em **Build and deployment**, escolha **Deploy from a branch**.
+6. Selecione a branch `main` e a pasta `/ (root)`, depois clique em **Save**.
+7. Aguarde a publicação. O GitHub mostrará um endereço parecido com `https://seu-usuario.github.io/convite-nathalia/`.
 
-Após a publicação, o GitHub Pages fornecerá o endereço público.
+Esse endereço abre diretamente no navegador do Android (Chrome) e do iPhone (Safari), sem instalar aplicativo e sem fazer login.
 
-## Personalização
+## Conteúdo e personalização
 
-- O conteúdo, o estilo e o botão estão no arquivo `index.html`.
-- O único elemento clicável é **ABRIR LOCALIZAÇÃO**, que aponta para o link do Google Maps fornecido.
-- As fontes Cormorant Garamond e Great Vibes são carregadas do Google Fonts; se estiver offline, haverá fontes alternativas.
+- `index.html`: página inteira, estilos, ícones SVG e animações.
+- `README.md`: estas instruções.
 
-Não é necessário instalar dependências ou executar comandos para hospedar no GitHub Pages.
+O único elemento clicável da página é o botão **ABRIR LOCALIZAÇÃO**, que aponta para o link do Google Maps fornecido. Os textos do convite foram mantidos conforme as informações aprovadas. As fontes são carregadas do Google Fonts; se não houver internet, o navegador usa fontes alternativas.
